@@ -48,9 +48,10 @@ public class Field implements IField {
         for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
             for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
                 if (macroboard [macroX][macroY] == AVAILABLE_FIELD) {
-                    for (int microX = 0; microX < microboard.length; microX ++) { 
-                        for (int microY = 0; microY < microboard.length; microY ++) { 
-                            if(microboard [microX][microY] == EMPTY_FIELD) {
+                    for (int microX = (macroX*3); microX < ((microboard.length)-((2-macroX)*3)); microX ++) { 
+                        for (int microY = (macroX*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
+                            if(microboard[microX][microY] == EMPTY_FIELD) {
+               //                 availableMoves.add([microX][microY])  // Whatever an IMove is.
                             }
                         }        
                     }
