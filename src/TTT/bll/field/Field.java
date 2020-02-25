@@ -19,16 +19,18 @@ public class Field implements IField {
     
     @Override
     public void clearBoard() {
-  //      int microX;
-        int microY;
-        int macroX;
-        int macroY;
-
-        
         
         for (int microX = 0; microX < microboard.length; microX ++) { 
-            for (microY = 0; microY < microboard.length; microY ++) { 
-System.out.println(microX + " " + microY + "! ");
+            for (int microY = 0; microY < microboard.length; microY ++) { 
+                microboard [microX][microY] = EMPTY_FIELD;
+System.out.println(microX + " " + microY + "=" + EMPTY_FIELD);
+            }
+        }
+        
+        for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
+            for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
+                macroboard [macroX][macroY] = AVAILABLE_FIELD;
+System.out.println(macroX + " " + macroY + "=" + AVAILABLE_FIELD);
             }
         }
         
