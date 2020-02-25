@@ -59,7 +59,7 @@ public class Field implements IField {
                 return null;
             }
         }
-        return null;
+        return availableMoves;
     }
             
             
