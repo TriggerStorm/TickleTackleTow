@@ -19,9 +19,19 @@ public class Field implements IField {
     
     @Override
     public void clearBoard() {
-        for (int microX = 0; microX < microboard.length; microX ++); 
-                for (int microY = 0; microY < microboard.length; microY ++); 
+  //      int microX;
+        int microY;
+        int macroX;
+        int macroY;
 
+        
+        
+        for (int microX = 0; microX < microboard.length; microX ++) { 
+            for (microY = 0; microY < microboard.length; microY ++) { 
+System.out.println(microX + " " + microY + "! ");
+            }
+        }
+        
     }
 
     @Override
