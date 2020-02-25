@@ -13,13 +13,15 @@ import java.util.List;
  * @author admin
  */
 public class Field implements IField {
-    String [][] board = new String [9][9];
+    String [][] microboard = new String [9][9];
     String [][] macroboard = new String [3][3];
 
     
     @Override
     public void clearBoard() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int microX = 0; microX < microboard.length; microX ++); 
+                for (int microY = 0; microY < microboard.length; microY ++); 
+
     }
 
     @Override
