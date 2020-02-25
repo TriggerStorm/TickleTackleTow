@@ -1,6 +1,6 @@
-package game;
+package TTT.bll.game;
 
-import field.IField;
+import TTT.bll.field.IField;
 
 /**
  *
