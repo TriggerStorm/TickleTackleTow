@@ -6,6 +6,7 @@
 package TTT.bll.field;
 
 import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -19,8 +20,8 @@ import java.util.ListIterator;
 public class Field implements IField {
     String [][] microboard = new String [9][9];
     String [][] macroboard = new String [3][3];
+    IMove imove;
 
-    
     @Override
     public void clearBoard() {
         for (int microX = 0; microX < microboard.length; microX ++) { 
@@ -40,8 +41,7 @@ public class Field implements IField {
     
     @Override
     public List<IMove> getAvailableMoves() {
-        List<IMove> availableMoves = new ArrayList<>();
-   //     IMove possibleMove = new IMove();
+        List<IMove> availableIMoves = new ArrayList<>();
           
         for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
             for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
@@ -49,15 +49,17 @@ public class Field implements IField {
                     for (int microX = (macroX*3); microX < ((microboard.length)-((2-macroX)*3)); microX ++) { 
                         for (int microY = (macroX*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
                             if((microboard[microX][microY]).equals(EMPTY_FIELD)) {
-               //                 availableMoves.add([microX][microY])  // Whatever an IMove is.
+                            Move move = new Move(microX,microY);
+                            availableIMoves.add(move);
                             }
                         }        
                     }
                 }
-                return null;
             }
         }
-        return availableMoves;
+        System.out.println("AvailableImoves = " + availableIMoves.size());        
+        return availableIMoves;
+
     }
             
             

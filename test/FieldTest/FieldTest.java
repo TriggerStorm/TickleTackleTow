@@ -19,7 +19,7 @@ public class FieldTest {
     public static void main(String[] args) {
         Field field = new Field();
             field.clearBoard();
-
+            field.getAvailableMoves();
         }
     
 }
