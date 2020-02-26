@@ -45,19 +45,23 @@ public class Field implements IField {
           
         for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
             for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
+System.out.println("Board: X = " + macroX + " Y = " + macroY);        
+              
                 if ((macroboard [macroX][macroY]).equals(AVAILABLE_FIELD)) {
                     for (int microX = (macroX*3); microX < ((microboard.length)-((2-macroX)*3)); microX ++) { 
-                        for (int microY = (macroX*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
+                        for (int microY = (macroY*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
                             if((microboard[microX][microY]).equals(EMPTY_FIELD)) {
                             Move move = new Move(microX,microY);
                             availableIMoves.add(move);
+System.out.println("AvailableImoves: X = " + move.getX() + " Y = " + move.getY());        
+                            
                             }
                         }        
                     }
                 }
             }
         }
-        System.out.println("AvailableImoves = " + availableIMoves.size());        
+System.out.println(" TotalAvailableImoves = " + availableIMoves.size());        
         return availableIMoves;
 
     }
