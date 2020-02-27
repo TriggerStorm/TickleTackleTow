@@ -92,11 +92,17 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
         return true;
     }
 
+    
     @Override
     public boolean isFull() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<IMove> availableMoves = getAvailableMoves();
+        if(availableMoves.size() > 0) {
+            return false;
+        }
+        return true;    
     }
 
+    
     @Override
     public Boolean isInActiveMicroboard(int x, int y) {
         List<IMove> availableMoves = getAvailableMoves();
