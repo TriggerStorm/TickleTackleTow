@@ -18,11 +18,11 @@ public class FieldTest {
      */
     public static void main(String[] args) {
         Field field = new Field();
+        String[][] board = new String[9][9];
             field.clearBoard();
             field.getAvailableMoves();
-            field.getPlayerId(2,2);
-            field.getPlayerId(5,5);
-            field.getPlayerId(2,7);
+            board = field.getBoard();
+            System.out.println("finish");
 
         }
     

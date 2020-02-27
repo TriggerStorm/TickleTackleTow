@@ -35,10 +35,11 @@ public class Field implements IField {
                 macroboard [macroX][macroY] = AVAILABLE_FIELD;
             }
         }
-        microboard[2][2]="X";
-        microboard[5][5]="0";
+        microboard[5][5] = "X";
+        microboard[3][7] = "J";
+        microboard[0][4] = "0";
+        microboard[6][8] = "4";
 
-        
     }
 
     
@@ -70,15 +71,10 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     }
             
             
-            
-            
-    
     @Override
     public String getPlayerId(int column, int row) {
         String playerId;
     playerId = microboard[column][row];
-    System.out.println(" Player at: " + column+ " " + row + " = " + playerId);        
-
     return playerId;
     }
 
@@ -98,11 +94,23 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
     @Override
     public String[][] getBoard() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String[][] board = new String [9][9];
+        for(int y = 0; y < microboard.length; y++) { 
+System.out.println("");
 
+            for(int x = 0; x < microboard.length; x++) { 
+            board[x][y] = getPlayerId(x, y);
+            String value = board[x][y];
+ System.out.print(value + " ");
+            }
+        }
+        return board;
+    }
+    
+    
     @Override
     public String[][] getMacroboard() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
