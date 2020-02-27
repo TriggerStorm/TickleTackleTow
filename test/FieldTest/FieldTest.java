@@ -20,6 +20,10 @@ public class FieldTest {
         Field field = new Field();
             field.clearBoard();
             field.getAvailableMoves();
+            field.getPlayerId(2,2);
+            field.getPlayerId(5,5);
+            field.getPlayerId(2,7);
+
         }
     
 }

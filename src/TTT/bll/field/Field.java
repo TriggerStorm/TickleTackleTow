@@ -22,6 +22,7 @@ public class Field implements IField {
     String [][] macroboard = new String [3][3];
     IMove imove;
 
+    
     @Override
     public void clearBoard() {
         for (int microX = 0; microX < microboard.length; microX ++) { 
@@ -34,6 +35,10 @@ public class Field implements IField {
                 macroboard [macroX][macroY] = AVAILABLE_FIELD;
             }
         }
+        microboard[2][2]="X";
+        microboard[5][5]="0";
+
+        
     }
 
     
@@ -70,9 +75,14 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public String getPlayerId(int column, int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String playerId;
+    playerId = microboard[column][row];
+    System.out.println(" Player at: " + column+ " " + row + " = " + playerId);        
+
+    return playerId;
     }
 
+    
     @Override
     public boolean isEmpty() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
