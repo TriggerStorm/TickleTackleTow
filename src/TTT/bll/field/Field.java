@@ -82,7 +82,14 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int y = 0; y < board.length; y++) {
+            for(int x = 0; x < board.length; x++) {
+                if(!board[x][y].equals(EMPTY_FIELD)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
