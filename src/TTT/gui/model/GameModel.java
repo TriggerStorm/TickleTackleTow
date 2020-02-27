@@ -10,5 +10,5 @@ package TTT.gui.model;
  * @author Trigger
  */
 public class GameModel {
-    
+
 }

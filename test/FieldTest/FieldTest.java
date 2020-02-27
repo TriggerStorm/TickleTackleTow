@@ -6,7 +6,6 @@
 package FieldTest;
 
 import TTT.bll.field.Field;
-
 /**
  *
  * @author admin
@@ -18,11 +17,16 @@ public class FieldTest {
      */
     public static void main(String[] args) {
         Field field = new Field();
+        Boolean valid;
         String[][] board = new String[9][9];
             field.clearBoard();
             field.getAvailableMoves();
             board = field.getBoard();
             field.getMacroboard();
+          
+            valid = field.isInActiveMicroboard(1, 1);
+System.out.println("Valid at 4,4 = " + valid); 
+
             System.out.println("finish");
 
         }

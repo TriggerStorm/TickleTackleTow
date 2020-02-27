@@ -38,7 +38,7 @@ public class Field implements IField {
  //       board[5][5] = "X";
  //       board[3][7] = "J";
  //       board[0][4] = "0";
- //       board[6][8] = "4";
+ //      board[4][4] = "4";
 
     }
 
@@ -49,7 +49,8 @@ public class Field implements IField {
           
         for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
             for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
-System.out.println("Board: X = " + macroX + " Y = " + macroY);        
+System.out.println("");
+        System.out.println("MacroBoard: X = " + macroX + " Y = " + macroY);        
               
                 if ((macroboard [macroX][macroY]).equals(AVAILABLE_FIELD)) {
                     for (int microY = (macroY*3); microY < ((board.length)-((2-macroY)*3)); microY ++) { 
@@ -122,7 +123,7 @@ System.out.println("");
     @Override
     public String[][] getMacroboard() {
 System.out.println("");
-System.out.println("MICROBOARD");
+System.out.println("MACROBOARD");
 
         String[][] board = new String [3][3];
         for(int y = 0; y < macroboard.length; y++) { 
