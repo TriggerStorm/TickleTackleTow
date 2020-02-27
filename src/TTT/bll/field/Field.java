@@ -105,37 +105,13 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public String[][] getBoard() {
-System.out.println("MICROBOARD");
-        String[][] board = new String [9][9];
-        for(int y = 0; y < this.board.length; y++) { 
-System.out.println("");
-
-            for(int x = 0; x < this.board.length; x++) { 
-            board[x][y] = getPlayerId(x, y);
-            String value = board[x][y];
- System.out.print(value + " ");
-            }
-        }
         return board;
     }
     
     
     @Override
     public String[][] getMacroboard() {
-System.out.println("");
-System.out.println("MACROBOARD");
-
-        String[][] board = new String [3][3];
-        for(int y = 0; y < macroboard.length; y++) { 
-System.out.println("");
-
-            for(int x = 0; x < macroboard.length; x++) { 
-            board[x][y] = getPlayerId(x, y);
-            String value = board[x][y];
- System.out.print(value + " ");
-            }
-        }
-        return board;
+        return macroboard;
     }
 
     
