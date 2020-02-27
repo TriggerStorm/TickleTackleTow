@@ -19,6 +19,10 @@ public class FieldTest {
     public static void main(String[] args) {
         Field field = new Field();
             field.clearBoard();
+            field.getAvailableMoves();
+            field.getPlayerId(2,2);
+            field.getPlayerId(5,5);
+            field.getPlayerId(2,7);
 
         }
     

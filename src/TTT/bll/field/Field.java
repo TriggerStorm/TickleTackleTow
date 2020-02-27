@@ -6,6 +6,7 @@
 package TTT.bll.field;
 
 import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -19,47 +20,53 @@ import java.util.ListIterator;
 public class Field implements IField {
     String [][] microboard = new String [9][9];
     String [][] macroboard = new String [3][3];
+    IMove imove;
 
     
     @Override
     public void clearBoard() {
-        
         for (int microX = 0; microX < microboard.length; microX ++) { 
             for (int microY = 0; microY < microboard.length; microY ++) { 
                 microboard [microX][microY] = EMPTY_FIELD;
-//System.out.println(microX + " " + microY + "=" + EMPTY_FIELD);
             }
         }
-        
         for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
             for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
                 macroboard [macroX][macroY] = AVAILABLE_FIELD;
-//System.out.println(macroX + " " + macroY + "=" + AVAILABLE_FIELD);
             }
         }
+        microboard[2][2]="X";
+        microboard[5][5]="0";
+
         
     }
 
     
     @Override
     public List<IMove> getAvailableMoves() {
-        List<IMove> availableMoves = new ArrayList<>();
-
-        for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
-            for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
-                if (macroboard [macroX][macroY] == AVAILABLE_FIELD) {
-                    for (int microX = (macroX*3); microX < ((microboard.length)-((2-macroX)*3)); microX ++) { 
-                        for (int microY = (macroX*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
-                            if(microboard[microX][microY] == EMPTY_FIELD) {
-               //                 availableMoves.add([microX][microY])  // Whatever an IMove is.
+        List<IMove> availableIMoves = new ArrayList<>();
+          
+        for (int macroY = 0; macroY < macroboard.length; macroY ++) { 
+            for (int macroX = 0; macroX < macroboard.length; macroX ++) { 
+System.out.println("Board: X = " + macroX + " Y = " + macroY);        
+              
+                if ((macroboard [macroX][macroY]).equals(AVAILABLE_FIELD)) {
+                    for (int microY = (macroY*3); microY < ((microboard.length)-((2-macroY)*3)); microY ++) { 
+                        for (int microX = (macroX*3); microX < ((microboard.length)-((2-macroX)*3)); microX ++) { 
+                            if((microboard[microX][microY]).equals(EMPTY_FIELD)) {
+                            Move move = new Move(microX,microY);
+                            availableIMoves.add(move);
+System.out.println("AvailableImoves: X = " + move.getX() + " Y = " + move.getY());        
+                            
                             }
                         }        
                     }
                 }
-                return null;
             }
         }
-        return availableMoves;
+System.out.println(" TotalAvailableImoves = " + availableIMoves.size());        
+        return availableIMoves;
+
     }
             
             
@@ -68,9 +75,14 @@ public class Field implements IField {
     
     @Override
     public String getPlayerId(int column, int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String playerId;
+    playerId = microboard[column][row];
+    System.out.println(" Player at: " + column+ " " + row + " = " + playerId);        
+
+    return playerId;
     }
 
+    
     @Override
     public boolean isEmpty() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
