@@ -22,6 +22,7 @@ public class FieldTest {
             field.clearBoard();
             field.getAvailableMoves();
             board = field.getBoard();
+            field.getMacroboard();
             System.out.println("finish");
 
         }
