@@ -167,7 +167,6 @@ public class GameManager {
         int macroX = (move.getX()/3);
         int macroY = (move.getY()/3);
         if(isValidMove(move)) {
-            updateBoard(move);  // maybe not here
             checkMicroboardWin(move.getX(), move.getY());
         }
         
@@ -176,8 +175,12 @@ public class GameManager {
     
     
     private void makeMove(IMove move) {
-        
+        if (isValidMove(move)) {
+            updateBoard(move);
+            
         }
+        
+    }
         
         
         
@@ -199,7 +202,7 @@ public class GameManager {
         int nextBoardX = 2 - (lastX%3);
         int nextBoardY = 2 - (lastY%3);
         String[][] updatedMacroboard = currentState.getField().getMacroboard();
-        if(updatedMacroboard[nextBoardX][nextBoardX] != IField.AVAILABLE_FIELD) {
+        if(updatedMacroboard[nextBoardX][nextBoardY] != IField.AVAILABLE_FIELD) {
             unSetActiveMicroboard();
         } else {
             for(int x = 0; x < updatedMacroboard.length; x++) {
