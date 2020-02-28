@@ -82,72 +82,94 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isFull() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean isInActiveMicroboard(int x, int y) {
-        List<IMove> availableMoves = getAvailableMoves();
-        for (int j = 0; j < availableMoves.size(); j++) {
-            IMove imove = availableMoves.get(j);
-            if((imove.getX() == x) && (imove.getY() == y)) {
-                return true;
+        for(int y = 0; y < board.length; y++) {
+            for(int x = 0; x < board.length; x++) {
+                if(!board[x][y].equals(EMPTY_FIELD)) {
+                    return false;
+                }
             }
         }
-        return false;
+        return true;
     }
 
     
     @Override
-    public String[][] getBoard() {
-System.out.println("MICROBOARD");
-        String[][] board = new String [9][9];
-        for(int y = 0; y < this.board.length; y++) { 
-System.out.println("");
-
-            for(int x = 0; x < this.board.length; x++) { 
-            board[x][y] = getPlayerId(x, y);
-            String value = board[x][y];
- System.out.print(value + " ");
-            }
+    public boolean isFull() {
+        List<IMove> availableMoves = getAvailableMoves();
+        if(availableMoves.size() > 0) {
+            return false;
         }
+        return true;    
+    }
+
+    
+    @Override
+    public Boolean isInActiveMicroboard(int x, int y) {
+        int macroX = (x/3);
+        int macroY = (y/3);
+        return macroboard[macroX][macroY].equals(AVAILABLE_FIELD);
+    }
+    
+   
+    @Override
+    public String[][] getBoard() {
         return board;
     }
     
     
     @Override
     public String[][] getMacroboard() {
-System.out.println("");
-System.out.println("MACROBOARD");
-
-        String[][] board = new String [3][3];
-        for(int y = 0; y < macroboard.length; y++) { 
-System.out.println("");
-
-            for(int x = 0; x < macroboard.length; x++) { 
-            board[x][y] = getPlayerId(x, y);
-            String value = board[x][y];
- System.out.print(value + " ");
-            }
-        }
-        return board;
+        return macroboard;
     }
 
     
     @Override
     public void setBoard(String[][] board) {
-        this.board = this.board;
+        this.board = board;
     }
 
     
     @Override
     public void setMacroboard(String[][] macroboard) {
         this.macroboard = macroboard;
+    }
+
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    public void printMicroboard() {
+         System.out.println("");
+        System.out.println("MICROBOARD");
+        String [][] testBoard = board;
+        for(int y = 0; y < testBoard.length; y++) { 
+            for(int x = 0; x < testBoard.length; x++) { 
+                testBoard[x][y] = getPlayerId(x, y);
+                String value = testBoard[x][y];
+                System.out.print(value + " ");
+            }
+            System.out.println("");
+        }
+    }
+    
+     
+    public void printMacroboard() {
+        System.out.println("");
+        System.out.println("MACROBOARD");
+        String [][] testBoard = macroboard;
+        for(int y = 0; y < testBoard.length; y++) { 
+            for(int x = 0; x < testBoard.length; x++) { 
+                testBoard[x][y] = getPlayerId(x, y);
+                String value = testBoard[x][y];
+                System.out.print(value + " ");
+            }
+            System.out.println("");
+        }
     }
     
     

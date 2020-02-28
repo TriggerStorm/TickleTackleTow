@@ -5,8 +5,14 @@
  */
 package FieldTest;
 
+import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
+import TTT.bll.bot.IBot;
 import TTT.bll.field.Field;
-/**
+import TTT.bll.field.IField;
+import TTT.bll.game.GameState;
+import TTT.bll.game.IGameState;
+import TTT.gui.model.GameModel;/**
  *
  * @author admin
  */
@@ -23,12 +29,16 @@ public class FieldTest {
             field.getAvailableMoves();
             board = field.getBoard();
             field.getMacroboard();
-          
+            
+            field.printMacroboard();
+            field.printMicroboard();
+
             valid = field.isInActiveMicroboard(1, 1);
 System.out.println("Valid at 4,4 = " + valid); 
-
-            System.out.println("finish");
+System.out.println("finish");
 
         }
     
+    
+   
 }

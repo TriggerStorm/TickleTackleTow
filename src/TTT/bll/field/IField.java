@@ -11,6 +11,7 @@ public interface IField {
 
     String AVAILABLE_FIELD = "-1";
     String EMPTY_FIELD = ".";
+    String UNAVAILABLE_FIELD = "-";
 
     /**
      * Clears the board
@@ -70,4 +71,8 @@ public interface IField {
      */
     void setMacroboard(String[][] macroboard);
     
+    
+    void printMicroboard();
+    void printMacroboard();
+
 }

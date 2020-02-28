@@ -6,6 +6,8 @@
 package TTT.bll.game;
 
 import TTT.bll.field.IField;
+import TTT.bll.field.Field;
+
 
 /**
  *
@@ -19,7 +21,7 @@ public class GameState implements IGameState{
 
     public GameState()
     {
-        //field = new Field();
+        field = new Field();
         moveNumber=0;
         roundNumber=0;
     }

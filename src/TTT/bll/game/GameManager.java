@@ -1,7 +1,20 @@
 package TTT.bll.game;
 
 import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
 import TTT.bll.bot.IBot;
+import TTT.bll.field.Field;
+import TTT.bll.field.IField;
+import TTT.bll.game.GameState;
+import TTT.bll.game.IGameState;
+import TTT.gui.model.GameModel;
+import java.util.List;
+
+
+
+
+
+
 
 /**
  * This is a proposed GameManager for Ultimate Tic-Tac-Toe,
@@ -29,7 +42,18 @@ public class GameManager {
     private GameMode mode = GameMode.HumanVsHuman;
     private IBot bot = null;
     private IBot bot2 = null;
+    private String playerOneIcon = "O";
+    private String playerTwoIcon = "X";
+    private String drawIcon = "-";
 
+    private GameModel gm = GameModel.getInstance();
+    
+
+    
+ //   private Imove lastMove;
+    
+    
+    
     /**
      * Set's the currentState so the game can begin.
      * Game expected to be played Human vs Human
@@ -39,6 +63,8 @@ public class GameManager {
     public GameManager(IGameState currentState) {
         this.currentState = currentState;
         mode = GameMode.HumanVsHuman;
+        
+       
     }
     
     /**
@@ -130,15 +156,161 @@ public class GameManager {
         return currentState.getField().isInActiveMicroboard(move.getX(), move.getY());
     }
     
-    private void updateBoard(IMove move)
-    {
-       //TODO: Update the board to the new state 
-        throw new UnsupportedOperationException("Not supported yet."); 
+    private void updateBoard(IMove move) {  //Alan's method
+        String[][] updatedboard = currentState.getField().getBoard();
+        updatedboard[move.getX()][move.getY()] = getPlayerIcon();
+        currentState.getField().setBoard(updatedboard);
     }
     
-    private void updateMacroboard(IMove move)
-    {
-       //TODO: Update the macroboard to the new state 
-       throw new UnsupportedOperationException("Not supported yet."); 
+    private void updateMacroboard(IMove move) {   //Alan's method
+        String[][] macroboard = currentState.getField().getMacroboard();
+        int macroX = (move.getX()/3);
+        int macroY = (move.getY()/3);
+        if(isValidMove(move)) {
+            updateBoard(move);  // maybe not here
+            checkMicroboardWin(move.getX(), move.getY());
+        }
+        
+        
     }
+    
+    
+    private void makeMove(IMove move) {
+        
+        }
+        
+        
+        
+    private boolean isValidMove (IMove move) {
+        if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {  // method not used, I think
+            List<IMove> availableMoves = currentState.getField().getAvailableMoves();
+            for (int i = 0; i < availableMoves.size(); i++) {
+                IMove availableMove = availableMoves.get(i);
+                if ((move.getX() == availableMove.getX()) && (move.getY() == availableMove.getY())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    
+    private void setActiveMicroBoard(int lastX, int lastY) {  //Alan's Method
+        int nextBoardX = 2 - (lastX%3);
+        int nextBoardY = 2 - (lastY%3);
+        String[][] updatedMacroboard = currentState.getField().getMacroboard();
+        if(updatedMacroboard[nextBoardX][nextBoardX] != IField.AVAILABLE_FIELD) {
+            unSetActiveMicroboard();
+        } else {
+            for(int x = 0; x < updatedMacroboard.length; x++) {
+                for(int y = 0; y < updatedMacroboard.length; x++) {
+                    if((updatedMacroboard[x][y] == IField.AVAILABLE_FIELD) &&  (!(x == nextBoardX && y == nextBoardY))) {
+                            updatedMacroboard[x][y] = IField.UNAVAILABLE_FIELD;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    private void unSetActiveMicroboard() {
+        String[][] updatedMacroboard = currentState.getField().getMacroboard();
+        for(int x = 0; x < updatedMacroboard.length; x++) {
+            for(int y = 0; y < updatedMacroboard.length; x++) {
+                if(updatedMacroboard[x][y] == IField.UNAVAILABLE_FIELD) {
+                    updatedMacroboard[x][y] = IField.AVAILABLE_FIELD;
+                } 
+            }
+        }
+    }
+
+    
+        
+    
+    
+    private String getPlayerIcon() {
+        String playerIcon;
+        if (currentPlayer == 0) {
+            playerIcon = playerOneIcon;
+        }
+        else {
+            playerIcon = playerTwoIcon;
+        }
+        return playerIcon;
+    }
+    
+    
+/*    private boolean checkMicroboardWin(IMove move) {   //Alan's method
+        int startX = (move.getX()/3)*3;
+        int startY = (move.getY()/3)*3;
+        String [][] boardToCheck = currentState.getField().getBoard();
+        return checkForBoardWin(boardToCheck, startX, startY);    
+    }
+ */   
+
+    private boolean checkMicroboardWin( int posx, int posy) {   
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+      if(checkForBoardWin(boardToCheck, posx, posy))
+        return true;
+      else return false;
+    }
+    
+    private boolean checkMacroboardWin() {   
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+      if(checkForBoardWin(boardToCheck,0, 0))
+        return true;
+      else return false;
+    }
+    
+    
+    
+    
+    
+     private boolean checkForBoardWin (String[][] board,int posx,int posy) 
+     {
+         for(int x = posx; x < posx+3; x++)
+        {
+            if(checkForWin(board, x, posy))
+            {
+                return true;
+            }
+            for(int y = posy; y < posy+3; y++)
+            {
+                
+                if(checkForWin(board, posx, y))
+                {
+                    return true;
+                }
+            }
+        }
+        if(checkForWin(board,posx,posy)) 
+            return true;
+        else return false;
+     }
+    
+    private boolean checkForWin (String[][] board,int posx,int posy) 
+    {   
+      if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx][posy+1]) 
+                    && board[posx][posy+1].equals(board[posx][posy+2]))
+        return true;
+      else if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx+1][posy]) 
+                    && board[posx+1][posy].equals(board[posx][posy+2]))
+          return true;
+      else if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx+1][posy+1]) 
+                    && board[posx+1][posy+1].equals(board[posx+2][posy+2]))
+          return true;
+      else if ((board[posx][posy+2].equals(playerOneIcon) || board[posx][posy+2].equals(playerTwoIcon))
+                && board[posx][posy+2].equals(board[posx+1][posy+1])
+                && board[posx+1][posy+1].equals(board[posx+2][posy]))
+          return true;
+      else
+          return false;
+    }
+    
+    
 }
