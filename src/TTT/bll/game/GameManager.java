@@ -185,7 +185,50 @@ public class GameManager {
     }
     
 
-    private boolean checkForBoardWin (String[][] board,int posx,int posy) 
+    private boolean checkForBoardWin2 (String[][] board,int posx,int posy) 
+    private boolean checkMicroboardWin( int posx, int posy) {   
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+      if(checkForBoardWin(boardToCheck, posx, posy))
+        return true;
+      else return false;
+    }
+    
+    private boolean checkMacroboardWin() {   
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+      if(checkForBoardWin(boardToCheck,0, 0))
+        return true;
+      else return false;
+    }
+    
+    
+    
+    
+    
+     private boolean checkForBoardWin (String[][] board,int posx,int posy) 
+     {
+         for(int x = posx; x < posx+3; x++)
+        {
+            if(checkForWin(board, x, posy))
+            {
+                return true;
+            }
+            for(int y = posy; y < posy+3; y++)
+            {
+                
+                if(checkForWin(board, posx, y))
+                {
+                    return true;
+                }
+            }
+        }
+        if(checkForWin(board,posx,posy)) 
+            return true;
+        else return false;
+     }
+    
+    private boolean checkForWin (String[][] board,int posx,int posy) 
     {   
       if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
                     && board[posx][posy].equals(board[posx][posy+1]) 
