@@ -107,20 +107,10 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     public Boolean isInActiveMicroboard(int x, int y) {
         int macroX = (x/3);
         int macroY = (y/3);
-
-       return null;
-        
- /*       List<IMove> availableMoves = getAvailableMoves();
-        for (int j = 0; j < availableMoves.size(); j++) {
-            IMove imove = availableMoves.get(j);
-            if((imove.getX() == x) && (imove.getY() == y)) {
-                return true;
-            }
-        }
-        return false; */
+        return macroboard[macroX][macroY].equals(AVAILABLE_FIELD);
     }
-
     
+   
     @Override
     public String[][] getBoard() {
         return board;

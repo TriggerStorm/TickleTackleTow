@@ -26,7 +26,7 @@ public class FieldTest {
           
             valid = field.isInActiveMicroboard(1, 1);
 System.out.println("Valid at 4,4 = " + valid); 
-int test = 23/4;
+int test = 1%3;
         System.out.println(test);
             System.out.println("finish");
 

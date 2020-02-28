@@ -157,12 +157,28 @@ public class GameManager {
         String[][] macroboard = currentState.getField().getMacroboard();
         int macroX = (move.getX()/3);
         int macroY = (move.getY()/3);
-        if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
-             checkMicroboardWin(move.getX(), move.getY());
+        if(isValidMove(move)) {
+            updateBoard(move);  // maybe not here
+            checkMicroboardWin(move.getX(), move.getY());
         }
         
         
     }
+    
+    private boolean isValidMove (IMove move) {
+                if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
+                
+     }
+         return false;
+    }
+    
+    
+    private void setActiveMicroBoard(int lastX, int lastY) {
+        int nextBoardX = lastX%3;
+        int nextBoardY = lastY%3;
+
+    }
+    
     
     
     private String getPlayerIcon() {
