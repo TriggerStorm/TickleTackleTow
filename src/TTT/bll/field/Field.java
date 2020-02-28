@@ -133,6 +133,44 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     public void setMacroboard(String[][] macroboard) {
         this.macroboard = macroboard;
     }
+
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    public void printMicroboard() {
+         System.out.println("");
+        System.out.println("MICROBOARD");
+        String [][] testBoard = board;
+        for(int y = 0; y < testBoard.length; y++) { 
+            for(int x = 0; x < testBoard.length; x++) { 
+                testBoard[x][y] = getPlayerId(x, y);
+                String value = testBoard[x][y];
+                System.out.print(value + " ");
+            }
+            System.out.println("");
+        }
+    }
+    
+     
+    public void printMacroboard() {
+        System.out.println("");
+        System.out.println("MACROBOARD");
+        String [][] testBoard = macroboard;
+        for(int y = 0; y < testBoard.length; y++) { 
+            for(int x = 0; x < testBoard.length; x++) { 
+                testBoard[x][y] = getPlayerId(x, y);
+                String value = testBoard[x][y];
+                System.out.print(value + " ");
+            }
+            System.out.println("");
+        }
+    }
     
     
     

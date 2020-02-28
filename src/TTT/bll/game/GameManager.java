@@ -8,6 +8,8 @@ import TTT.bll.field.IField;
 import TTT.bll.game.GameState;
 import TTT.bll.game.IGameState;
 import TTT.gui.model.GameModel;
+import java.util.List;
+
 
 
 
@@ -172,11 +174,24 @@ public class GameManager {
         
     }
     
+    
+    private void makeMove(IMove move) {
+        
+        }
+        
+        
+        
     private boolean isValidMove (IMove move) {
-                if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
-                
-     }
-         return false;
+        if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {  // method not used, I think
+            List<IMove> availableMoves = currentState.getField().getAvailableMoves();
+            for (int i = 0; i < availableMoves.size(); i++) {
+                IMove availableMove = availableMoves.get(i);
+                if ((move.getX() == availableMove.getX()) && (move.getY() == availableMove.getY())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     
     
