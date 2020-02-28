@@ -43,7 +43,6 @@ public class GameManager {
     private String playerOneIcon = "O";
     private String playerTwoIcon = "X";
     private String drawIcon = "-";
-    private String unavailbleIcon = "-";
 
     private GameModel gm = GameModel.getInstance();
     
@@ -191,7 +190,7 @@ public class GameManager {
             for(int x = 0; x < updatedMacroboard.length; x++) {
                 for(int y = 0; y < updatedMacroboard.length; x++) {
                     if((updatedMacroboard[x][y] == IField.AVAILABLE_FIELD) &&  (!(x == nextBoardX && y == nextBoardY))) {
-                            updatedMacroboard[x][y] = unavailbleIcon;
+                            updatedMacroboard[x][y] = IField.UNAVAILABLE_FIELD;
                     }
                 }
             }
@@ -200,7 +199,14 @@ public class GameManager {
     
     
     private void unSetActiveMicroboard() {
-        
+        String[][] updatedMacroboard = currentState.getField().getMacroboard();
+        for(int x = 0; x < updatedMacroboard.length; x++) {
+            for(int y = 0; y < updatedMacroboard.length; x++) {
+                if(updatedMacroboard[x][y] == IField.UNAVAILABLE_FIELD) {
+                    updatedMacroboard[x][y] = IField.AVAILABLE_FIELD;
+                } 
+            }
+        }
     }
 
     
