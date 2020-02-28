@@ -7,6 +7,7 @@ import TTT.bll.field.Field;
 import TTT.bll.field.IField;
 import TTT.bll.game.GameState;
 import TTT.bll.game.IGameState;
+import TTT.gui.model.GameModel;
 
 
 
@@ -41,6 +42,8 @@ public class GameManager {
     private IBot bot2 = null;
     private String playerOneIcon = "O";
     private String playerTwoIcon = "X";
+    private GameModel gm = GameModel.getInstance();
+    
 
     
  //   private Imove lastMove;
@@ -56,6 +59,8 @@ public class GameManager {
     public GameManager(IGameState currentState) {
         this.currentState = currentState;
         mode = GameMode.HumanVsHuman;
+        
+       
     }
     
     /**
@@ -158,7 +163,7 @@ public class GameManager {
         int macroX = (move.getX()/3);
         int macroY = (move.getY()/3);
         if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
-             checkMicroboardWin(move);
+             checkMicroboardWin(move.getX(),move.getY());
         }
         
         
