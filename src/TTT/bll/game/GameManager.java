@@ -140,14 +140,20 @@ public class GameManager {
     }
     
     private void updateBoard(IMove move) {  //Alan's method
-        String[][] board = currentState.getField().getBoard();
-        board[move.getX()][move.getY()] = getPlayerIcon();
+        String[][] updatedboard = currentState.getField().getBoard();
+        updatedboard[move.getX()][move.getY()] = getPlayerIcon();
+        currentState.getField().setBoard(updatedboard);
     }
     
-    private void updateMacroboard(IMove move)
-    {
-       //TODO: Update the macroboard to the new state 
-       throw new UnsupportedOperationException("Not supported yet."); 
+    private void updateMacroboard(IMove move) {   //Alan's method
+        String[][] macroboard = currentState.getField().getMacroboard();
+        int macroX = (move.getX()/3);
+        int macroY = (move.getY()/3);
+        if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
+             checkMicroboardWin(move);
+        }
+        
+        
     }
     
     
@@ -160,5 +166,23 @@ public class GameManager {
             playerIcon = "X";
         }
         return playerIcon;
+    }
+    
+    
+    private boolean checkMicroboardWin( IMove move) {   //Alan's method
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+        
+        return false;
+    }
+    
+    
+    private boolean checkForBoardWin (String[][] boardToCheck ) {   //Alan's method
+    //    if(boardToCheck ==
+    //            int StartX = (move.getX()/3);
+    //    int StartY = (move.getY()/3);
+        
+        
+        return false;
     }
 }
