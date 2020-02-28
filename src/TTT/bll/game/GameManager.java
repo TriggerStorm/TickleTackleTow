@@ -42,6 +42,9 @@ public class GameManager {
     private IBot bot2 = null;
     private String playerOneIcon = "O";
     private String playerTwoIcon = "X";
+    private String drawIcon = "-";
+    private String unavailbleIcon = "-";
+
     private GameModel gm = GameModel.getInstance();
     
 
@@ -178,12 +181,30 @@ public class GameManager {
     }
     
     
-    private void setActiveMicroBoard(int lastX, int lastY) {
-        int nextBoardX = lastX%3;
-        int nextBoardY = lastY%3;
-
+    private void setActiveMicroBoard(int lastX, int lastY) {  //Alan's Method
+        int nextBoardX = 2 - (lastX%3);
+        int nextBoardY = 2 - (lastY%3);
+        String[][] updatedMacroboard = currentState.getField().getMacroboard();
+        if(updatedMacroboard[nextBoardX][nextBoardX] != IField.AVAILABLE_FIELD) {
+            unSetActiveMicroboard();
+        } else {
+            for(int x = 0; x < updatedMacroboard.length; x++) {
+                for(int y = 0; y < updatedMacroboard.length; x++) {
+                    if((updatedMacroboard[x][y] == IField.AVAILABLE_FIELD) &&  (!(x == nextBoardX && y == nextBoardY))) {
+                            updatedMacroboard[x][y] = unavailbleIcon;
+                    }
+                }
+            }
+        }
     }
     
+    
+    private void unSetActiveMicroboard() {
+        
+    }
+
+    
+        
     
     
     private String getPlayerIcon() {
