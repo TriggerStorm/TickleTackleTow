@@ -177,14 +177,26 @@ public class GameManager {
     }
     
     
-    private boolean checkMicroboardWin( IMove move) {   //Alan's method
+    private boolean checkMicroboardWin( int posx, int posy) {   
        
         String [][] boardToCheck = currentState.getField().getBoard();
-      //  if(checkForBoardWin(boardToCheck, move)) {
-            
-      //  }
-        return false;
+      if(checkForBoardWin(boardToCheck, posx, posy))
+        return true;
+      else return false;
     }
+    
+    private boolean checkMacroboardWin() {   
+       
+        String [][] boardToCheck = currentState.getField().getBoard();
+      if(checkForBoardWin(boardToCheck,0, 0))
+        return true;
+      else return false;
+    }
+    
+    
+    
+    
+    
      private boolean checkForBoardWin (String[][] board,int posx,int posy) 
      {
          for(int x = posx; x < posx+3; x++)
