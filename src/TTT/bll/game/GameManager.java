@@ -1,6 +1,7 @@
 package TTT.bll.game;
 
 import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
 import TTT.bll.bot.IBot;
 import TTT.bll.field.Field;
 import TTT.bll.field.IField;
@@ -38,7 +39,14 @@ public class GameManager {
     private GameMode mode = GameMode.HumanVsHuman;
     private IBot bot = null;
     private IBot bot2 = null;
+    private String playerOneIcon = "O";
+    private String playerTwoIcon = "X";
 
+    
+ //   private Imove lastMove;
+    
+    
+    
     /**
      * Set's the currentState so the game can begin.
      * Game expected to be played Human vs Human
@@ -160,10 +168,10 @@ public class GameManager {
     private String getPlayerIcon() {
         String playerIcon;
         if (currentPlayer == 0) {
-            playerIcon = "O";
+            playerIcon = playerOneIcon;
         }
         else {
-            playerIcon = "X";
+            playerIcon = playerTwoIcon;
         }
         return playerIcon;
     }
@@ -172,7 +180,9 @@ public class GameManager {
     private boolean checkMicroboardWin( IMove move) {   //Alan's method
        
         String [][] boardToCheck = currentState.getField().getBoard();
-        
+      //  if(checkForBoardWin(boardToCheck, move)) {
+            
+      //  }
         return false;
     }
     
