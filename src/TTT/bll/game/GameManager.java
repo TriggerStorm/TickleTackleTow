@@ -158,7 +158,7 @@ public class GameManager {
         int macroX = (move.getX()/3);
         int macroY = (move.getY()/3);
         if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {
-             checkMicroboardWin(move);
+             checkMicroboardWin(move.getX(), move.getY());
         }
         
         
@@ -177,15 +177,14 @@ public class GameManager {
     }
     
     
-    private boolean checkMicroboardWin(IMove move) {   //Alan's method
+/*    private boolean checkMicroboardWin(IMove move) {   //Alan's method
         int startX = (move.getX()/3)*3;
         int startY = (move.getY()/3)*3;
         String [][] boardToCheck = currentState.getField().getBoard();
         return checkForBoardWin(boardToCheck, startX, startY);    
     }
-    
+ */   
 
-    private boolean checkForBoardWin2 (String[][] board,int posx,int posy) 
     private boolean checkMicroboardWin( int posx, int posy) {   
        
         String [][] boardToCheck = currentState.getField().getBoard();
