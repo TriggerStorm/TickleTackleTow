@@ -177,20 +177,16 @@ public class GameManager {
     }
     
     
-    private boolean checkMicroboardWin( IMove move) {   //Alan's method
-       
+    private boolean checkMicroboardWin(IMove move) {   //Alan's method
+        int startX = (move.getX()/3)*3;
+        int startY = (move.getY()/3)*3;
         String [][] boardToCheck = currentState.getField().getBoard();
-      //  if(checkForBoardWin(boardToCheck, move)) {
-            
-      //  }
-        return false;
+        return checkForBoardWin(boardToCheck, startX, startY);    
     }
     
     
-    private boolean checkForBoardWin (String[][] boardToCheck ) {   //Alan's method
-    //    if(boardToCheck ==
-    //            int StartX = (move.getX()/3);
-    //    int StartY = (move.getY()/3);
+    private boolean checkForBoardWin (String[][] boardToCheck, int startX, int startY) {
+        
         
         
         return false;
