@@ -130,7 +130,7 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public void setBoard(String[][] board) {
-        this.board = this.board;
+        this.board = board;
     }
 
     

@@ -2,6 +2,15 @@ package TTT.bll.game;
 
 import TTT.bll.move.IMove;
 import TTT.bll.bot.IBot;
+import TTT.bll.field.Field;
+import TTT.bll.field.IField;
+import TTT.bll.game.GameState;
+import TTT.bll.game.IGameState;
+
+
+
+
+
 
 /**
  * This is a proposed GameManager for Ultimate Tic-Tac-Toe,
@@ -130,15 +139,26 @@ public class GameManager {
         return currentState.getField().isInActiveMicroboard(move.getX(), move.getY());
     }
     
-    private void updateBoard(IMove move)
-    {
-       //TODO: Update the board to the new state 
-        throw new UnsupportedOperationException("Not supported yet."); 
+    private void updateBoard(IMove move) {  //Alan's method
+        String[][] board = currentState.getField().getBoard();
+        board[move.getX()][move.getY()] = getPlayerIcon();
     }
     
     private void updateMacroboard(IMove move)
     {
        //TODO: Update the macroboard to the new state 
        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+    
+    
+    private String getPlayerIcon() {
+        String playerIcon;
+        if (currentPlayer == 0) {
+            playerIcon = "O";
+        }
+        else {
+            playerIcon = "X";
+        }
+        return playerIcon;
     }
 }
