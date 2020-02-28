@@ -187,12 +187,27 @@ public class GameManager {
     }
     
     
-    private boolean checkForBoardWin (String[][] boardToCheck ) {   //Alan's method
-    //    if(boardToCheck ==
-    //            int StartX = (move.getX()/3);
-    //    int StartY = (move.getY()/3);
-        
-        
-        return false;
+    private boolean checkForBoardWin (String[][] board,int posx,int posy) 
+    {   
+      if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx][posy+1]) 
+                    && board[posx][posy+1].equals(board[posx][posy+2]))
+        return true;
+      else if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx+1][posy]) 
+                    && board[posx+1][posy].equals(board[posx][posy+2]))
+          return true;
+      else if ((board[posx][posy].equals(playerOneIcon) || board[posx][posy].equals(playerTwoIcon))
+                    && board[posx][posy].equals(board[posx+1][posy+1]) 
+                    && board[posx+1][posy+1].equals(board[posx+2][posy+2]))
+          return true;
+      else if ((board[posx][posy+2].equals(playerOneIcon) || board[posx][posy+2].equals(playerTwoIcon))
+                && board[posx][posy+2].equals(board[posx+1][posy+1])
+                && board[posx+1][posy+1].equals(board[posx+2][posy]))
+          return true;
+      else
+          return false;
     }
+    
+    
 }
