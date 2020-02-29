@@ -1,7 +1,61 @@
 /*
- * Empty Stylesheet file.
+ * Created by Cille
  */
 
 .mainFxmlClass {
+    -fx-background-color: #23314d; /*Dark Blue*/
+    
 
+}
+
+.gridPaneMAIN {
+    -fx-border-style: solid; 
+    -fx-border-color: black;
+    -fx-border-width: 2;
+}
+
+.gridPaneSMALL {
+    
+}
+
+.gridPaneSMALL:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-border-style: solid;
+    -fx-border-color: #071887; /*Med BLUE */
+    -fx-background-color: rgba(1,24,135,0.3); /*Blue slightly transparent*/
+    
+}
+
+.buttonSMALL {
+    -fx-background-color: #748199;
+}
+
+.buttonSMALL:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-border-style: solid;
+    -fx-border-color: #d8dbf0; /*LIGHT BLUE */
+    
+}
+
+.menu_btn {
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-radius: 100px;
+    -fx-background-radius: 100px; 
+    -fx-background-color: #748199;
+}
+
+.menu_btn:hover {
+    -fx-scale-x: 1.6;
+    -fx-scale-y: 1.6;
+    -fx-background-color: #1b2842;
+    -fx-text-fill: #d8dbf0;
+}
+
+.scoreboard {
+    -fx-background-color: black;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px; 
 }

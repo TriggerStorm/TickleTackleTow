@@ -119,6 +119,21 @@ System.out.println(" TotalAvailableImoves = " + availableIMoves.size());
     
     @Override
     public String[][] getMacroboard() {
+
+System.out.println("");
+System.out.println("MACROBOARD");
+
+        String[][] macroboard = new String [3][3];
+        for(int y = 0; y < this.macroboard.length; y++) { 
+System.out.println("");
+
+            for(int x = 0; x < this.macroboard.length; x++) { 
+            macroboard[x][y] = getPlayerId(x, y);
+            String value = macroboard[x][y];
+ System.out.print(value + " ");
+            }
+        }
+
         return macroboard;
     }
 

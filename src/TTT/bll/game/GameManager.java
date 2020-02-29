@@ -174,12 +174,64 @@ public class GameManager {
     }
     
     
-    private void makeMove(IMove move) {
+    /*private void makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
-            
+            int xpos = move.getX();
+            int ypos = move.getY();
+            if(checkMicroboardWin(xpos, ypos) || checkMicroboardDraw(xpos, ypos))
+            {
+                String neededIcon;
+                if(checkMicroboardDraw)
+                {
+                    neededIcon = drawIcon;
+                }
+                else
+                {
+                    if(currentPlayer == 0)
+                    {
+                        neededIcon = playerOneIcon;
+                    }
+                    else
+                    {
+                        neededIcon = playerTwoIcon;
+                    }
+                }
+                
+                String[][] myboard = currentState.getField().getBoard();
+                
+                updateMacroboard(myboard, neededIcon);
+                
+                if(checkMacroboardWin() || checkMacroboardDraw())
+                {
+                    //end game
+                }
+                else
+                {
+                    updateMacroboard(move);
+                    changePlayer(currentPlayer);
+                    //change to new turn
+                }
+            }
+            else
+            {
+                changePlayer(currentPlayer);
+                //Change to new turn?
+            }
         }
         
+    }*/
+    
+    private void changePlayer(int curplayer)
+    {
+        if(currentPlayer == 0)
+        {
+            currentPlayer = 1;
+        }
+        else
+        {
+            currentPlayer = 0;
+        }
     }
         
         
