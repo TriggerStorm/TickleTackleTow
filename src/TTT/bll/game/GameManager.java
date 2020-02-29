@@ -189,9 +189,14 @@ public class GameManager {
             if (checkMacroboardWin()) {
                 gameResult = "Game is a Draw!";
             }
-            
+            if (isGameOver()) {
+                // Display fireworks
+            }
+            changePlayer();
         }
             
+        
+       
   /*              String neededIcon;
                 if(checkMicroboardDraw(posX,posX))
                 {
@@ -233,8 +238,17 @@ public class GameManager {
         */
     }
     
-    private void changePlayer(int curplayer)
-    {
+    
+    public boolean isGameOver() {
+         if ((gameResult).equals(null)) {
+             return false;
+        } else {
+            return true;
+             }
+        }
+    
+    
+    private void changePlayer() {
         if(currentPlayer == 0)
         {
             currentPlayer = 1;
