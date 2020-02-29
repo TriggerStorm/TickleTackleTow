@@ -46,6 +46,9 @@ public class GameManager {
     private String playerTwoIcon = "O";
     private String drawIcon = "-";
     private String gameResult = "null";
+    private int previousX;
+    private int previousY;
+    private int numberOfTurns = 0;
     private GameModel gm = GameModel.getInstance();
     
 
@@ -178,7 +181,6 @@ public class GameManager {
             if (checkMicroboardWin(posX, posY)) {
                 updateMacroboard(posX, posY, getPlayerIcon());
                 checkMacroboardWin();
-
             }
             if (checkMicroboardDraw(posX, posY)) {
                 updateMacroboard(posX, posY, drawIcon);
@@ -190,52 +192,14 @@ public class GameManager {
                 gameResult = "Game is a Draw!";
             }
             if (isGameOver()) {
-                // Display fireworks
+// Display fireworks
+System.out.println("Game Result: " + gameResult);                
             }
             changePlayer();
+            setActiveMicroBoard(move.getX(), move.getY());
+            numberOfTurns ++;
         }
-            
-        
-       
-  /*              String neededIcon;
-                if(checkMicroboardDraw(posX,posX))
-                {
-                    neededIcon = drawIcon;
-                }
-                else
-                {
-                    if(currentPlayer == 0)
-                    {
-                        neededIcon = playerOneIcon;
-                    }
-                    else
-                    {
-                        neededIcon = playerTwoIcon;
-                    }
-                }
-                
-                String[][] myboard = currentState.getField().getBoard();
-                
-  //              updateMacroboard(myboard, neededIcon);
-                
-                if(checkMacroboardWin() || checkMacroboardDraw())
-                {
-                    //end game
-                }
-                else
-                {
-                    updateMacroboard(move);
-                    changePlayer(currentPlayer);
-                    //change to new turn
-                }
-            }
-            else
-            {
-                changePlayer(currentPlayer);
-                //Change to new turn?
-            }
-        }
-        */
+ // not a valid move         
     }
     
     
