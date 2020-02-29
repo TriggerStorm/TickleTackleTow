@@ -45,7 +45,7 @@ public class GameManager {
     private String playerOneIcon = "X";
     private String playerTwoIcon = "O";
     private String drawIcon = "-";
-
+    private String gameResult = "null";
     private GameModel gm = GameModel.getInstance();
     
 
@@ -177,10 +177,19 @@ public class GameManager {
             int posY = move.getY();
             if (checkMicroboardWin(posX, posY)) {
                 updateMacroboard(posX, posY, getPlayerIcon());
+                checkMacroboardWin();
+
             }
             if (checkMicroboardDraw(posX, posY)) {
                 updateMacroboard(posX, posY, drawIcon);
             }
+            if (checkMacroboardWin()) {
+                gameResult = getGameResult();
+            }
+            if (checkMacroboardWin()) {
+                gameResult = "Game is a Draw!";
+            }
+            
         }
             
   /*              String neededIcon;
@@ -297,6 +306,18 @@ public class GameManager {
     }
     
     
+     private String getGameResult() {
+        String playerName;
+        if (currentPlayer == 0) {
+            playerName = "Player One Wins!";
+        }
+        else {
+            playerName = "Player Two Wins!";
+        }
+        return playerName;
+    }
+    
+     
 /*    private boolean checkMicroboardWin(IMove move) {   //Alan's method
         int startX = (move.getX()/3)*3;
         int startY = (move.getY()/3)*3;
@@ -312,19 +333,47 @@ public class GameManager {
       else return false;
     }
     
+    
+    private boolean checkMicroboardDraw (int posX,int posY) {
+        int startX = (posX/3)*3;
+        int startY = (posY/3)*3;
+        String[][] boardToCheck = currentState.getField().getBoard();
+        for (int y = startY; y < startY + 3; y++) {
+            for( int x = startX; y < startX + 3; x++) {
+                if (boardToCheck[x][y].equals(Field.EMPTY_FIELD)) {
+                    return false;
+                }
+            }
+        }
+        return true;  
+    }
+
+    
     private boolean checkMacroboardWin() {   
        
-        String [][] boardToCheck = currentState.getField().getBoard();
+        String [][] boardToCheck = currentState.getField().getMacroboard();
  // FIX LINE BELOW??
-        if(checkForBoardWin(boardToCheck,0, 0))
+        if(checkForBoardWin(boardToCheck,0, 0)) {
         return true;
-      else return false;
+        } else {
+            return false;
+        }
     }
     
     
-    
-    
-    
+    private boolean checkMacroboardDraw () {
+        String [][] boardToCheck = currentState.getField().getBoard();
+        for (int y = 0; y < 3; y++) {
+            for (int x = 0; x < 3; x++) {
+                if (boardToCheck[x][y].equals(Field.AVAILABLE_FIELD)) {        
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+                
+                
      private boolean checkForBoardWin (String[][] board,int posx,int posy) 
      {
          for(int x = posx; x < posx+3; x++)
@@ -370,23 +419,7 @@ public class GameManager {
     }
     
     
-    private boolean checkMicroboardDraw (int posX,int posY) {
-        int startX = (posX/3)*3;
-        int startY = (posY/3)*3;
-        String[][] boardToCheck = currentState.getField().getBoard();
-        for (int y = startY; y < startY + 3; y++) {
-            for( int x = startX; y < startX + 3; x++) {
-                if (boardToCheck[x][y].equals(Field.EMPTY_FIELD)) {
-                    return false;
-                }
-            }
-        }
-        return true;  
-    }
-
-                
-                
-                
+   
                 
     public int getCurrentPlayer() {
         return currentPlayer;
