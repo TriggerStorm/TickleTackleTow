@@ -174,7 +174,7 @@ public class GameManager {
     }
     
     
-    private void makeMove(IMove move) {
+    /*private void makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
             int xpos = move.getX();
@@ -220,7 +220,7 @@ public class GameManager {
             }
         }
         
-    }
+    }*/
     
     private void changePlayer(int curplayer)
     {
