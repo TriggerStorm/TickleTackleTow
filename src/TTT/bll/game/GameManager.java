@@ -110,7 +110,7 @@ public class GameManager {
         
         //Update the currentState
         updateBoard(move);
-        updateMacroboard(move);
+  //      updateMacroboard();
         
         //Update currentPlayer
         currentPlayer = (currentPlayer + 1) % 2;
@@ -162,27 +162,29 @@ public class GameManager {
         currentState.getField().setBoard(updatedboard);
     }
     
-    private void updateMacroboard(IMove move) {   //Alan's method
+    private void updateMacroboard(int posX, int posY, String result) {   //Alan's method
         String[][] macroboard = currentState.getField().getMacroboard();
-        int macroX = (move.getX()/3);
-        int macroY = (move.getY()/3);
-        if(isValidMove(move)) {
-            checkMicroboardWin(move.getX(), move.getY());
-        }
-        
-        
+        int macroX = (posX/3);
+        int macroY = (posY/3);
+    
     }
     
     
- /*   private void makeMove(IMove move) {
+    public boolean makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
-            int xpos = move.getX();
-            int ypos = move.getY();
-            if(checkMicroboardWin(xpos, ypos) || checkMicroboardDraw(xpos, ypos))
-            {
-                String neededIcon;
-                if(checkMicroboardDraw)
+            int posX = move.getX();
+            int posY = move.getY();
+            if (checkMicroboardWin(posX, posY)) {
+                updateMacroboard(posX, posY, getPlayerIcon());
+            }
+            if (checkMicroboardDraw(posX, posY)) {
+                updateMacroboard(posX, posY, drawIcon);
+            }
+        }
+            
+  /*              String neededIcon;
+                if(checkMicroboardDraw(posX,posX))
                 {
                     neededIcon = drawIcon;
                 }
@@ -200,7 +202,7 @@ public class GameManager {
                 
                 String[][] myboard = currentState.getField().getBoard();
                 
-                updateMacroboard(myboard, neededIcon);
+  //              updateMacroboard(myboard, neededIcon);
                 
                 if(checkMacroboardWin() || checkMacroboardDraw())
                 {
@@ -219,8 +221,9 @@ public class GameManager {
                 //Change to new turn?
             }
         }
-        
-    }*/
+        */
+        return true;
+    }
     
     private void changePlayer(int curplayer)
     {
@@ -303,18 +306,18 @@ public class GameManager {
     }
  */   
 
-    private boolean checkMicroboardWin( int posx, int posy) {   
-       
+    private boolean checkMicroboardWin( int posX, int posY) {   
         String [][] boardToCheck = currentState.getField().getBoard();
-      if(checkForBoardWin(boardToCheck, posx, posy))
-        return true;
+        if(checkForBoardWin(boardToCheck, posX, posY))
+           return true;
       else return false;
     }
     
     private boolean checkMacroboardWin() {   
        
         String [][] boardToCheck = currentState.getField().getBoard();
-      if(checkForBoardWin(boardToCheck,0, 0))
+ // FIX LINE BELOW??
+        if(checkForBoardWin(boardToCheck,0, 0))
         return true;
       else return false;
     }
@@ -367,6 +370,27 @@ public class GameManager {
           return false;
     }
     
+
+    
+    private boolean checkMicroboardDraw (int posX,int posY) {
+        int startX = (posX/3)*3;
+        int startY = (posY/3)*3;
+        String[][] boardToCheck = currentState.getField().getBoard();
+        for (int y = startY; y < startY + 3; y++) {
+            for( int x = startX; y < startX + 3; x++) {
+                if (boardToCheck[x][y].equals(Field.EMPTY_FIELD)) {
+                    return false;
+                }
+            }
+        }
+        return true;  
+    }
+
+                
+                
+                
+                
+
     public int getCurrentPlayer() {
         return currentPlayer;
     }
