@@ -110,7 +110,7 @@ public class GameManager {
         
         //Update the currentState
         updateBoard(move);
-        updateMacroboard(move);
+  //      updateMacroboard();
         
         //Update currentPlayer
         currentPlayer = (currentPlayer + 1) % 2;
@@ -162,15 +162,11 @@ public class GameManager {
         currentState.getField().setBoard(updatedboard);
     }
     
-    private void updateMacroboard(IMove move) {   //Alan's method
+    private void updateMacroboard(int posX, int posY, String result) {   //Alan's method
         String[][] macroboard = currentState.getField().getMacroboard();
-        int macroX = (move.getX()/3);
-        int macroY = (move.getY()/3);
-        if(isValidMove(move)) {
-            checkMicroboardWin(move.getX(), move.getY());
-        }
-        
-        
+        int macroX = (posX/3);
+        int macroY = (posY/3);
+    
     }
     
     
@@ -179,9 +175,15 @@ public class GameManager {
             updateBoard(move);
             int posX = move.getX();
             int posY = move.getY();
-            if(checkMicroboardWin(posX, posY) || checkMicroboardDraw(posX, posY))
-            {
-                String neededIcon;
+            if (checkMicroboardWin(posX, posY)) {
+                updateMacroboard(posX, posY, getPlayerIcon());
+            }
+            if (checkMicroboardDraw(posX, posY)) {
+                updateMacroboard(posX, posY, drawIcon);
+            }
+        }
+            
+  /*              String neededIcon;
                 if(checkMicroboardDraw(posX,posX))
                 {
                     neededIcon = drawIcon;
@@ -200,7 +202,7 @@ public class GameManager {
                 
                 String[][] myboard = currentState.getField().getBoard();
                 
-                updateMacroboard(myboard, neededIcon);
+  //              updateMacroboard(myboard, neededIcon);
                 
                 if(checkMacroboardWin() || checkMacroboardDraw())
                 {
@@ -219,7 +221,7 @@ public class GameManager {
                 //Change to new turn?
             }
         }
-        
+        */
     }
     
     private void changePlayer(int curplayer)
@@ -386,7 +388,7 @@ public class GameManager {
                 
                 
                 
-    private int getCurrentPlayer() {
+    public int getCurrentPlayer() {
         return currentPlayer;
     }
     
