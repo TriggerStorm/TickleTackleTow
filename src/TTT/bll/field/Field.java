@@ -125,17 +125,17 @@ System.out.println("");
 System.out.println("");
 System.out.println("MACROBOARD");
 
-        String[][] board = new String [3][3];
-        for(int y = 0; y < macroboard.length; y++) { 
+        String[][] macroboard = new String [3][3];
+        for(int y = 0; y < this.macroboard.length; y++) { 
 System.out.println("");
 
-            for(int x = 0; x < macroboard.length; x++) { 
-            board[x][y] = getPlayerId(x, y);
-            String value = board[x][y];
+            for(int x = 0; x < this.macroboard.length; x++) { 
+            macroboard[x][y] = getPlayerId(x, y);
+            String value = macroboard[x][y];
  System.out.print(value + " ");
             }
         }
-        return board;
+        return macroboard;
     }
 
     
