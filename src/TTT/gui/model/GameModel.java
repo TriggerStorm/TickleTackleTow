@@ -77,7 +77,7 @@ public class GameModel {
     
     public boolean PlayerMove(int xPosition, int yPosition)
     {
-       return GM.updateGame(new Move(xPosition, yPosition));
+       return GM.makeMove(new Move(xPosition, yPosition));
     }
     
     public List<IMove> getAvailableMoves()
