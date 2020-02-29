@@ -367,7 +367,7 @@ public class GameManager {
           return false;
     }
     
-    private int getCurrentPlayer() {
+    public int getCurrentPlayer() {
         return currentPlayer;
     }
     
