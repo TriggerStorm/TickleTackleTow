@@ -42,8 +42,8 @@ public class GameManager {
     private GameMode mode = GameMode.HumanVsHuman;
     private IBot bot = null;
     private IBot bot2 = null;
-    private String playerOneIcon = "O";
-    private String playerTwoIcon = "X";
+    private String playerOneIcon = "X";
+    private String playerTwoIcon = "O";
     private String drawIcon = "-";
 
     private GameModel gm = GameModel.getInstance();
@@ -174,7 +174,7 @@ public class GameManager {
     }
     
     
-    /*private void makeMove(IMove move) {
+ /*   private void makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
             int xpos = move.getX();
@@ -367,5 +367,8 @@ public class GameManager {
           return false;
     }
     
+    private int getCurrentPlayer() {
+        return currentPlayer;
+    }
     
 }
