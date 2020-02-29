@@ -174,15 +174,15 @@ public class GameManager {
     }
     
     
- /*   private void makeMove(IMove move) {
+    private void makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
-            int xpos = move.getX();
-            int ypos = move.getY();
-            if(checkMicroboardWin(xpos, ypos) || checkMicroboardDraw(xpos, ypos))
+            int posX = move.getX();
+            int posY = move.getY();
+            if(checkMicroboardWin(posX, posY) || checkMicroboardDraw(posX, posY))
             {
                 String neededIcon;
-                if(checkMicroboardDraw)
+                if(checkMicroboardDraw(posX,posX))
                 {
                     neededIcon = drawIcon;
                 }
@@ -220,7 +220,7 @@ public class GameManager {
             }
         }
         
-    }*/
+    }
     
     private void changePlayer(int curplayer)
     {
@@ -303,18 +303,18 @@ public class GameManager {
     }
  */   
 
-    private boolean checkMicroboardWin( int posx, int posy) {   
-       
+    private boolean checkMicroboardWin( int posX, int posY) {   
         String [][] boardToCheck = currentState.getField().getBoard();
-      if(checkForBoardWin(boardToCheck, posx, posy))
-        return true;
+        if(checkForBoardWin(boardToCheck, posX, posY))
+           return true;
       else return false;
     }
     
     private boolean checkMacroboardWin() {   
        
         String [][] boardToCheck = currentState.getField().getBoard();
-      if(checkForBoardWin(boardToCheck,0, 0))
+ // FIX LINE BELOW??
+        if(checkForBoardWin(boardToCheck,0, 0))
         return true;
       else return false;
     }
@@ -367,6 +367,25 @@ public class GameManager {
           return false;
     }
     
+    
+    private boolean checkMicroboardDraw (int posX,int posY) {
+        int startX = (posX/3)*3;
+        int startY = (posY/3)*3;
+        String[][] boardToCheck = currentState.getField().getBoard();
+        for (int y = startY; y < startY + 3; y++) {
+            for( int x = startX; y < startX + 3; x++) {
+                if (boardToCheck[x][y].equals(Field.EMPTY_FIELD)) {
+                    return false;
+                }
+            }
+        }
+        return true;  
+    }
+
+                
+                
+                
+                
     private int getCurrentPlayer() {
         return currentPlayer;
     }
