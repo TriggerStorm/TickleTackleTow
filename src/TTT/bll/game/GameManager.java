@@ -42,8 +42,8 @@ public class GameManager {
     private GameMode mode = GameMode.HumanVsHuman;
     private IBot bot = null;
     private IBot bot2 = null;
-    private String playerOneIcon = "O";
-    private String playerTwoIcon = "X";
+    private String playerOneIcon = "X";
+    private String playerTwoIcon = "O";
     private String drawIcon = "-";
 
     private GameModel gm = GameModel.getInstance();
