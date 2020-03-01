@@ -18,7 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import TTT.bll.game.GameManager;
+import TTT.bll.move.IMove;
 
+        
+        
 /**
  * FXML Controller class
  *
@@ -55,9 +59,21 @@ public class GameBordController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        InitialiseBoard();
+        
+        
     }    
 
+    
+    public void InitialiseBoard() {
+        for (Node microboard : gridGameboard.getChildren()) {
+            Integer microXpos = GridPane.getRowIndex(microboard);
+            Integer microYpos = GridPane.getColumnIndex(microboard);
+
+        }
+    }
+    
+    
     @FXML
     private void clickOn(ActionEvent event) {
         
