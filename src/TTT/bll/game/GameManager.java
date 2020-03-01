@@ -173,7 +173,7 @@ public class GameManager {
     }
     
     
-    private void makeMove(IMove move) {
+    public boolean makeMove(IMove move) {
         if (isValidMove(move)) {
             updateBoard(move);
             int posX = move.getX();
@@ -200,6 +200,7 @@ System.out.println("Game Result: " + gameResult);
             numberOfTurns ++;
         }
  // not a valid move         
+        return true;
     }
     
     
@@ -396,9 +397,11 @@ System.out.println("Game Result: " + gameResult);
           return false;
     }
     
+
     
    
                 
+
     public int getCurrentPlayer() {
         return currentPlayer;
     }

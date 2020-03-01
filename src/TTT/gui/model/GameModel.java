@@ -5,6 +5,13 @@
  */
 package TTT.gui.model;
 
+import TTT.bll.bot.IBot;
+import TTT.bll.game.GameManager;
+import TTT.bll.game.GameState;
+import TTT.bll.move.IMove;
+import TTT.bll.move.Move;
+import java.util.List;
+
 
 
 /**
@@ -12,16 +19,16 @@ package TTT.gui.model;
  * @author Trigger
  */
 public class GameModel {
-        private static GameModel instance;
+        private static GameModel instance; //????
         private int posx,posy;
-     
-    
+        private GameState gameState;
+        private GameManager GM;
      private GameModel()
     {
         
     }
-
-     public static GameModel getInstance()
+     
+      public static GameModel getInstance() // 
     {
         if(instance == null)
         {
@@ -29,19 +36,55 @@ public class GameModel {
         }
         return instance;
     }
- public void setLastMove(int x, int y)
- {
-     this.posx = x;
-     this.posy = y;
- }
- public int getLastMoveX()
- {
+      
+    public void newPVPGame()
+    {
+        gameState = new GameState();
+        GM = new GameManager(gameState);
+    }
     
-     return posx;
- }
- public int getLastMoveY()
- {
-     return posy;
- }
+    public void newPVBGame(IBot bot)
+    {
+        gameState = new GameState();
+        GM = new GameManager(gameState, bot);
+    }
+    
+    public void newBVBGame(IBot bot1,IBot bot2)
+    {
+        gameState = new GameState();
+        GM = new GameManager(gameState, bot1, bot2);
+    }
+   
+    public void setLastMove(int x, int y) // ?
+    {
+             this.posx = x;
+             this.posy = y;
+    }
+     public int getLastMoveX() // ?
+    {
+            return posx;
+    }
+    
+     
+    public int getLastMoveY() // ?
+    {
+           return posy;
+    }
+    public int getCurrentPlayer()
+    {
+        return GM.getCurrentPlayer();
+    }
+    
+    public boolean PlayerMove(int xPosition, int yPosition)
+    {
+       return GM.makeMove(new Move(xPosition, yPosition));
+    }
+    
+    public List<IMove> getAvailableMoves()
+    {
+        return gameState.getField().getAvailableMoves();
+    }
+            
+    
  
 }
