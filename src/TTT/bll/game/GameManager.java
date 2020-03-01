@@ -196,6 +196,7 @@ public class GameManager {
 System.out.println("Game Result: " + gameResult);                
             }
             changePlayer();
+            unSetActiveMicroboard();
             setActiveMicroBoard(move.getX(), move.getY());
             numberOfTurns ++;
         }
