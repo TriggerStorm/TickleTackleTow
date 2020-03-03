@@ -125,7 +125,7 @@ public class GameManager {
      * Non-User driven input, e.g. an update for playing a bot move.
      * @return Returns true if the update was successful, false otherwise.
      */
-    public Boolean updateGame()
+    /*public Boolean updateGame()  fix ?
     {
         //Check game mode is set to one of the bot modes.
         assert(mode != GameMode.HumanVsHuman);
@@ -148,7 +148,7 @@ public class GameManager {
         
         //TODO: Implement a bot vs bot Update.
         throw new UnsupportedOperationException("Not supported yet."); 
-    }
+    }*/
     
     private Boolean verifyMoveLegality(IMove move)
     {
@@ -161,7 +161,7 @@ public class GameManager {
     
     private void updateBoard(IMove move) {  //Alan's method
         String[][] updatedboard = currentState.getField().getBoard();
-        updatedboard[move.getX()][move.getY()] = getPlayerIcon();
+     //   updatedboard[move.getX()][move.getY()] = getPlayerIcon();
         currentState.getField().setBoard(updatedboard);
     }
     
@@ -172,6 +172,16 @@ public class GameManager {
     
     }
     
+    public Boolean updateGame2(IMove move)
+    {
+        if(!verifyMoveLegality(move)) 
+            return false;
+        
+        updateBoard(move);
+        currentPlayer = (currentPlayer + 1) % 2;
+        
+        return true;
+    }
     
     public boolean makeMove(IMove move) {
         if (isValidMove(move)) {
@@ -228,15 +238,15 @@ System.out.println("Game Result: " + gameResult);
         
         
     private boolean isValidMove (IMove move) {
-        if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {  // method not used, I think
+       // if(currentState.getField().isInActiveMicroboard(move.getX(), move.getY())) {  // method not used, I think
             List<IMove> availableMoves = currentState.getField().getAvailableMoves();
             for (int i = 0; i < availableMoves.size(); i++) {
                 IMove availableMove = availableMoves.get(i);
-                if ((move.getX() == availableMove.getX()) && (move.getY() == availableMove.getY())) {
+             //   if ((move.getX() == availableMove.getX()) && (move.getY() == availableMove.getY())) {
                     return true;
                 }
-            }
-        }
+            
+        
         return false;
     }
     
@@ -407,4 +417,66 @@ System.out.println("Game Result: " + gameResult);
         return currentPlayer;
     }
     
+    public IGameState getCurrentState()
+    {
+        return currentState;
+    }
+    
+    public enum GameOverState{ // test
+        Active,
+        Win,
+        Tie
+    }
+    private volatile GameOverState gameOver = GameOverState.Active; // test
+    public GameOverState getGameOver() {
+        return gameOver;
+    }
+    
+    
+    /**
+     * Non-User driven input, e.g. an update for playing a bot move.
+     * @return Returns true if the update was successful, false otherwise.
+     */
+    public Boolean updateGame()
+    {
+        //Check game mode is set to one of the bot modes.
+        assert(mode != GameMode.HumanVsHuman);
+        
+        //Check if player is bot, if so, get bot input and update the state based on that.
+        if(mode == GameMode.HumanVsBot && currentPlayer == 1 && playerGoesFirst)
+        {
+             IMove botMove = bot.doMove(new GameState(currentState));
+             return updateGame(botMove);
+        }
+        else if(mode == GameMode.HumanVsBot && !playerGoesFirst && currentPlayer == 0)
+        {
+            IMove botMove = bot.doMove(new GameState(currentState));
+            return updateGame(botMove);
+        }
+        
+        //Check bot is not equal to null, and throw an exception if it is.
+        assert(bot != null);
+        assert(bot2 != null);
+
+        //Check if player is bot, if so, get bot input and update the state based on that.
+        if(mode == GameMode.BotVsBot)
+        {
+            assert(bot != null);
+            assert(bot2 != null);
+
+            IMove botMove = currentPlayer == 0 ? bot.doMove(new GameState(currentState)) : bot2.doMove(new GameState(currentState));
+
+            return updateGame(botMove);
+        }
+        return false;
+    }
+    
+    public GameManager(IGameState currentState, IBot bot, boolean humanPlaysFirst) {
+        this.currentState = currentState;
+        playerGoesFirst=humanPlaysFirst;
+        mode = GameMode.HumanVsBot;
+        this.bot = bot;
+        
+    }
+    private boolean playerGoesFirst = false;
 }
