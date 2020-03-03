@@ -49,7 +49,6 @@ public class GameManager {
     private int previousX;
     private int previousY;
     private int numberOfTurns = 0;
-    private GameModel gm = GameModel.getInstance();
     
 
     
