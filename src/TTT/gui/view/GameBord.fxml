@@ -42,15 +42,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -69,15 +69,15 @@
                             <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -96,15 +96,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -123,15 +123,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -150,15 +150,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -177,15 +177,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -204,15 +204,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -231,15 +231,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -258,15 +258,15 @@
                               <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXButton onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
-                              <JFXButton onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXButton onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="64.0" prefWidth="121.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="71.0" prefWidth="119.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="80.0" prefWidth="80.0" styleClass="buttonSMALL" text=" " />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="68.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="69.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="53.0" prefWidth="77.0" styleClass="buttonSMALL" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="JFX_bn" onAction="#clickOn" prefHeight="76.0" prefWidth="125.0" styleClass="buttonSMALL" text=" " GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>

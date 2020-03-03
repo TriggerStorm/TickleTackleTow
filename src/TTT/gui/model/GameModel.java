@@ -23,9 +23,10 @@ public class GameModel {
         private int posx,posy;
         private GameState gameState;
         private GameManager GM;
-     private GameModel()
+     public GameModel()
     {
-        
+        gameState = new GameState();
+        GM = new GameManager(gameState);
     }
      
       public static GameModel getInstance() // 
@@ -72,12 +73,13 @@ public class GameModel {
     }
     public int getCurrentPlayer()
     {
+        
         return GM.getCurrentPlayer();
     }
     
-    public boolean PlayerMove(int xPosition, int yPosition)
+    public boolean PlayerMove(IMove move)
     {
-       return GM.makeMove(new Move(xPosition, yPosition));
+       return GM.makeMove(move);
     }
     
     public List<IMove> getAvailableMoves()

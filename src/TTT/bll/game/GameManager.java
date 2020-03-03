@@ -46,7 +46,7 @@ public class GameManager {
     private String playerTwoIcon = "O";
     private String drawIcon = "-";
 
-    private GameModel gm = GameModel.getInstance();
+    
     
 
     
