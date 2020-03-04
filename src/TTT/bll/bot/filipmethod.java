@@ -39,11 +39,11 @@ public class filipmethod {
        for(int i=0; i < getMoves().size();i++)
        {
            String [][] boardToCheck = currentState.getField().getBoard();
-           boardToCheck[getMoves().get(i).getX()][getMoves().get(i).getY()] = playerOneIcon;
+           boardToCheck[getMoves().get(i).getX()][getMoves().get(i).getY()] = playerOneIcon; // if below will check if with "i" move there is win for player one
            if(checkMicroboardWin(boardToCheck,getMoves().get(i).getX(),getMoves().get(i).getY()) || checkMacroboardWin(boardToCheck))
                return getMoves().get(i);
            
-           boardToCheck[getMoves().get(i).getX()][getMoves().get(i).getY()] = playerTwoIcon;
+           boardToCheck[getMoves().get(i).getX()][getMoves().get(i).getY()] = playerTwoIcon;// if below will check if with "i" move there is win for player two
            if(checkMicroboardWin(boardToCheck,getMoves().get(i).getX(),getMoves().get(i).getY()) || checkMacroboardWin(boardToCheck))
                return getMoves().get(i);
            
