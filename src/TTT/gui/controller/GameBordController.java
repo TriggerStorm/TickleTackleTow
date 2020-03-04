@@ -77,6 +77,7 @@ public class GameBordController implements Initializable {
         Gp_macro.toFront(); // Or the buttons will not work
         createMicroGridPanes();
        gModel = new GameModel();
+       gModel.newPVPGame();
        if (gModel != null) {
             gModel.removeListener(observable -> update());
         }
